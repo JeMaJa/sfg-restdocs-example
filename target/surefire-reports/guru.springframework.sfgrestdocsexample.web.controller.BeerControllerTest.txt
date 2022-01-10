@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: guru.springframework.sfgrestdocsexample.web.controller.BeerControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.95 s <<< FAILURE! - in guru.springframework.sfgrestdocsexample.web.controller.BeerControllerTest
+saveNewBeer  Time elapsed: 0.281 s  <<< ERROR!
+org.springframework.restdocs.mustache.MustacheException$Context: No method or field with name 'constraints' on line 8
+	at guru.springframework.sfgrestdocsexample.web.controller.BeerControllerTest.saveNewBeer(BeerControllerTest.java:88)
+

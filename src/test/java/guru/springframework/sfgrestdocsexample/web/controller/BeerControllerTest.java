@@ -3,6 +3,7 @@ package guru.springframework.sfgrestdocsexample.web.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.sfgrestdocsexample.domain.Beer;
 import guru.springframework.sfgrestdocsexample.repositories.BeerRepository;
+import guru.springframework.sfgrestdocsexample.web.mappers.BeerMapper;
 import guru.springframework.sfgrestdocsexample.web.model.BeerDto;
 import guru.springframework.sfgrestdocsexample.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,8 @@ class BeerControllerTest {
 
     @MockBean
     BeerRepository beerRepository;
+    @MockBean
+    BeerMapper beerMapper;
 
     @Test
     void getBeerById() throws Exception {
@@ -75,7 +78,7 @@ class BeerControllerTest {
 
     @Test
     void saveNewBeer() throws Exception {
-        BeerDto beerDto =  getValidBeerDto();
+    	BeerDto beerDto =  getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
         mockMvc.perform(post("/api/v1/beer/")
